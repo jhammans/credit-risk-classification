@@ -1,27 +1,52 @@
-# Module 12 Report Template
+# Credit Risk Prediction Analysis
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+In this analysis, we developed machine learning models to predict the risk level of loan applications, classifying them as either "Healthy Loan" or "High-Risk Loan." The purpose of the analysis was to assist lenders in assessing loan applications, thereby reducing potential financial losses due to high-risk loans.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+The dataset used contains financial information such as income, loan amount, debt-to-income ratio, and credit history for each loan applicant. Our goal was to predict whether a loan would be classified as high-risk based on these features.
+
+We explored and analyzed key variables for the prediction, such as:
+* Loan status (Healthy Loan or High-Risk Loan)
+* Income, loan amount, and other borrower-related financial metrics
+* The dataset's loan status (`value_counts` revealed a significant imbalance between Healthy Loans and High-Risk Loans).
+
+The machine learning process included:
+1. **Data Preprocessing**: Handling missing values, encoding categorical features, and scaling numerical data.
+2. **Model Selection**: Implementing models like `LogisticRegression`, `Decision Tree`, and `Random Forest` to compare performance.
+3. **Model Training and Evaluation**: Splitting the dataset, training each model, and evaluating accuracy, precision, and recall to gauge model effectiveness.
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+Below are the performance metrics (accuracy, precision, and recall) for each machine learning model:
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+* **Machine Learning Model 1: Logistic Regression**
+    * **Accuracy**: 99%
+    * **Precision (Healthy Loan)**: 1.00
+    * **Recall (Healthy Loan)**: 0.99
+    * **Precision (High-Risk Loan)**: 0.84
+    * **Recall (High-Risk Loan)**: 0.99
+
+* **Machine Learning Model 2: Decision Tree**
+    * **Accuracy**: 99%
+    * **Precision (Healthy Loan)**: 1.00
+    * **Recall (Healthy Loan)**: 0.99
+    * **Precision (High-Risk Loan)**: 0.84
+    * **Recall (High-Risk Loan)**: 0.85
+
+* **Machine Learning Model 3: Random Forest**
+    * **Accuracy**: 99%
+    * **Precision (Healthy Loan)**: 1.00
+    * **Recall (Healthy Loan)**: 0.99
+    * **Precision (High-Risk Loan)**: 0.85
+    * **Recall (High-Risk Loan)**: 0.90
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+Based on the results, the **Logistic Regression** and **Random Forest** models perform exceptionally well, with high accuracy and balanced precision and recall scores. Both models achieve 99% accuracy, but Logistic Regression slightly edges out in simplicity and interpretability.
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+* **Recommended Model**: Logistic Regression, due to its high performance, simplicity, and interpretability.
+* **Performance Relevance**: Given the high financial stakes, accurately identifying "High-Risk Loan" cases is critical, which both Logistic Regression and Random Forest achieve with high recall (99% for Logistic Regression and 90% for Random Forest).
 
-If you do not recommend any of the models, please justify your reasoning.
+Overall, Logistic Regression is recommended, as it meets the project’s needs with excellent accuracy and recall for high-risk cases. If model interpretability is less important, Random Forest could also be considered for its robustness. If neither model is recommended, additional data or feature engineering may be necessary to improve performance.
+
